@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/Build/(.*)\\.wasm",
+      "headers": {
+        "Content-Type": "application/wasm"
+      },
+      "dest": "/Build/$1.wasm"
+    }
+  ]
+}
