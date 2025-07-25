@@ -2,11 +2,28 @@
   "version": 2,
   "routes": [
     {
+      "src": "/Build/(.*)\\.data",
+      "headers": {
+        "Content-Encoding": "gzip",
+        "Content-Type": "application/octet-stream"
+      },
+      "dest": "/Build/$1.data"
+    },
+    {
       "src": "/Build/(.*)\\.wasm",
       "headers": {
+        "Content-Encoding": "gzip",
         "Content-Type": "application/wasm"
       },
       "dest": "/Build/$1.wasm"
+    },
+    {
+      "src": "/Build/(.*)\\.js",
+      "headers": {
+        "Content-Encoding": "gzip",
+        "Content-Type": "application/javascript"
+      },
+      "dest": "/Build/$1.js"
     }
   ]
 }
